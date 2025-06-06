@@ -5,6 +5,11 @@ import { ThemeProvider } from "@/contexts/theme-context";
 import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/page";
 import AllTraders from "./pages/AllTraders";
+import TraderOrders from "./pages/TraderOrders";
+import BroilerRates from "./pages/BroilerRates";
+import TraderPayments from "./pages/TraderPayments";
+
+
 
 function App() {
     const router = createBrowserRouter([
@@ -20,7 +25,19 @@ function App() {
         path: "all-traders",
         element: <AllTraders />, // ✅ Your new page here
     },
-                
+    {
+        path: "trader-orders",
+        element: <TraderOrders />, // ✅ Your new page here
+    },
+    {
+        path: "broiler-rates",
+        element: <BroilerRates />, // ✅ Your new page here
+    },
+    {
+        path: "trader-payments",
+        element: <TraderPayments />, // ✅ Your new page here
+    },
+
                 // {
                 //     path: "analytics",
                 //     element: <h1 className="title">Analytics</h1>,
