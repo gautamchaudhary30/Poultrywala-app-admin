@@ -4,9 +4,267 @@ import { ChartColumn, Home, NotepadText, Package, PackagePlus, Settings, Shoppin
 import ProfileImage from "@/assets/product-image.png";
 import ProductImage from "@/assets/product-image.png";
 
+// export const navbarLinks = [
+//     {
+//         title: "Dashboard",
+//         links: [
+//             {
+//                 label: "Dashboard",
+//                 icon: Home,
+//                 path: "/",
+//             },
+//             {
+//                 label: "Analytics",
+//                 icon: ChartColumn,
+//                 path: "/analytics",
+//             },
+//             {
+//                 label: "Reports",
+//                 icon: NotepadText,
+//                 path: "/reports",
+//             },
+//         ],
+//     },
+//     {
+//         title: "Traders",
+//         links: [
+//             {
+//                 label: "All Traders",
+//                 icon: ChevronRight,
+//                 path: "/all-traders",
+//             },
+//             {
+//                 label: "Trader Orders",
+//                 icon: ChevronRight,
+//                 path: "/trader-orders",
+//             },
+//             {
+//                 label: "Broiler Rates",
+//                 icon: ChevronRight,
+//                 path: "/broiler-rates",
+//             },
+//             {
+//                 label: "Disputes / Complaints",
+//                 icon: ChevronRight,
+//                 path: "/disputes-complaints",
+//             },
+//             {
+//                 label: "Trader Payments",
+//                 icon: ChevronRight,
+//                 path: "/trader-payments",
+//             },
+//         ],
+//     },
+//     {
+//         title: "Companies",
+//         links: [
+//             {
+//                 label: "All Contract Companies ",
+//                 icon: ChevronRight,
+//                 path: "/all-contract-companies",
+//             },
+//             {
+//                 label: "All Branches",
+//                 icon: ChevronRight,
+//                 path: "/all-branches",
+//             },
+//             {
+//                 label: "Listed Farms",
+//                 icon: ChevronRight,
+//                 path: "/listed-farms",
+//             },
+//             {
+//                 label: "Company Orders",
+//                 icon: ChevronRight,
+//                 path: "/company-orders",
+//             },{
+//                 label: "Sales Report",
+//                 icon: ChevronRight,
+//                 path: "/sales-report",
+//             },{
+//                 label: "Zone-wise Analytics",
+//                 icon: ChevronRight,
+//                 path: "/zone-wise-analytics",
+//             },
+//         ],
+//     },
+//     {
+//         title: "General Managers (Marketing)",
+//         links: [
+//             {
+//                 label: "List of GMs",
+//                 icon: ChevronRight,
+//                 path: "/list-of-general-managers",
+//             },
+//             {
+//                 label: "Add / Manage GMs",
+//                 icon: ChevronRight,
+//                 path: "/add-manage-gms",
+//             },
+//             {
+//                 label: "Assign Zones",
+//                 icon: ChevronRight,
+//                 path: "/assign-zones",
+//             },
+//             {
+//                 label: "Daily Rate Setup",
+//                 icon: ChevronRight,
+//                 path: "/daily-rate-setup",
+//             },
+//             {
+//                 label: "Add Assistant General Managers",
+//                 icon: ChevronRight,
+//                 path: "/add-assistant-general-managers",
+//             },
+//         ],
+//     },
+//     {
+//         title: "Assistant General Managers (Zonal)",
+//         links: [
+//             {
+//                 label: "Add / Manage AGMs",
+//                 icon: ChevronRight,
+//                 path: "/add-manage-agms",
+//             },
+//             {
+//                 label: "Assign Booking Managers",
+//                 icon: ChevronRight,
+//                 path: "/assign-booking-managers",
+//             },
+//             {
+//                 label: "Branch Management",
+//                 icon: ChevronRight,
+//                 path: "/branch-management",
+//             },
+//         ],
+//     },
+//     {
+//         title: "Booking Managers",
+//         links: [
+//             {
+//                 label: "Add / Manage Booking Managers",
+//                 icon: ChevronRight,
+//                 path: "/add-manage-booking-managers",
+//             },
+//             {
+//                 label: " Add Farms to Sale (visible in Trader App)",
+//                 icon: ChevronRight,
+//                 path: "/add-farms-to-sale",
+//             },
+//             {
+//                 label: "Order Fulfilment",
+//                 icon: ChevronRight,
+//                 path: "/order-fulfilment",
+//             },
+//              {
+//                 label: "Inventory Management (Farm-wise Stock)",
+//                 icon: ChevronRight,
+//                 path: "/inventory-management",
+//             },
+//              {
+//                 label: "Schedule Deliveries",
+//                 icon: ChevronRight,
+//                 path: "/schedule-deliveries",
+//             },
+//              {
+//                 label: "Daily Rate Setup (Branch-wise)",
+//                 icon: ChevronRight,
+//                 path: "/daily-rate-setup-branch-wise",
+//             },
+//         ],
+//     },
+//      {
+//         title: "Lifting Supervisor",
+//         links: [
+//             {
+//                 label: "View Assigned Orders",
+//                 icon: ChevronRight,
+//                 path: "/view-assigned-orders",
+//             },
+//             {
+//                 label: "Order Details",
+//                 icon: ChevronRight,
+//                 path: "/order-details",
+//             },
+//             {
+//                 label: "Mark Delivery Complete",
+//                 icon: ChevronRight,
+//                 path: "/mark-delivery-complete",
+//             },
+//         ],
+//     },
+//       {
+//         title: "Finance / Accounts",
+//         links: [
+//             {
+//                 label: "View Payments (Pending / Completed)",
+//                 icon: ChevronRight,
+//                 path: "/view-payments",
+//             },
+//             {
+//                 label: "Generate Invoices",
+//                 icon: ChevronRight,
+//                 path: "/generate-invoices",
+//             },
+//             {
+//                 label: "Ledger Reports",
+//                 icon: ChevronRight,
+//                 path: "/ledger-reports",
+//             },
+//             {
+//                 label: "Payment Confirmations",
+//                 icon: ChevronRight,
+//                 path: "/payment-confirmations",
+//             },
+//         ],
+//     },
+//     {
+//         title: "Admin Users & Roles",
+//         links: [
+//             {
+//                 label: "Add Admin / Sub-admin",
+//                 icon: ChevronRight,
+//                 path: "/add-admin-sub-admin",
+//             },
+//             {
+//                 label: "Set Permissions",
+//                 icon: ChevronRight,
+//                 path: "/set-permissions",
+//             },
+//             {
+//                 label: "Role-wise Access",
+//                 icon: ChevronRight,
+//                 path: "/role-wise-access",
+//             },
+//         ],
+//     },
+//     {
+//         title: "Settings / Config",
+//         links: [
+//             {
+//                 label: "Notifications",
+//                 icon: ChevronRight,
+//                 path: "/notifications",
+//             },
+//             {
+//                 label: "Zones / Cities",
+//                 icon: ChevronRight,
+//                 path: "/zones-cities",
+//             },
+//             {
+//                 label: "App Settings",
+//                 icon: ChevronRight,
+//                 path: "/app-settings",
+//             },
+//         ],
+//     },
+// ];
+
+
+
 export const navbarLinks = [
     {
-        title: "Dashboard",
+        title: "Dashboard Overview",
         links: [
             {
                 label: "Dashboard",
@@ -14,251 +272,153 @@ export const navbarLinks = [
                 path: "/",
             },
             {
-                label: "Analytics",
+                label: "Summary Cards",
                 icon: ChartColumn,
-                path: "/analytics",
+                path: "/summary-cards",
             },
             {
-                label: "Reports",
+                label: "Quick Actions",
                 icon: NotepadText,
-                path: "/reports",
+                path: "/quick-actions",
             },
         ],
     },
     {
-        title: "Traders",
+        title: "User Management",
         links: [
             {
-                label: "All Traders",
+                label: "Trader Onboarding & Management",
                 icon: ChevronRight,
-                path: "/all-traders",
+                path: "/trader-onboarding",
             },
             {
-                label: "Trader Orders",
+                label: "Approved Traders",
                 icon: ChevronRight,
-                path: "/trader-orders",
+                path: "/approved-traders",
             },
             {
-                label: "Broiler Rates",
+                label: "Company Onboarding & Management",
                 icon: ChevronRight,
-                path: "/broiler-rates",
+                path: "/company-onboarding",
             },
             {
-                label: "Disputes / Complaints",
+                label: "Onboarding Requests",
                 icon: ChevronRight,
-                path: "/disputes-complaints",
+                path: "/onboarding-requests",
             },
             {
-                label: "Trader Payments",
+                label: "Approved Companies",
                 icon: ChevronRight,
-                path: "/trader-payments",
+                path: "/approved-companies",
             },
         ],
     },
     {
-        title: "Companies",
+        title: "Order & Trade Management",
         links: [
             {
-                label: "All Contract Companies ",
+                label: "Live Orders Feed",
                 icon: ChevronRight,
-                path: "/all-contract-companies",
+                path: "/live-orders",
             },
             {
-                label: "All Branches",
-                icon: ChevronRight,
-                path: "/all-branches",
-            },
-            {
-                label: "Listed Farms",
-                icon: ChevronRight,
-                path: "/listed-farms",
-            },
-            {
-                label: "Company Orders",
-                icon: ChevronRight,
-                path: "/company-orders",
-            },{
-                label: "Sales Report",
-                icon: ChevronRight,
-                path: "/sales-report",
-            },{
-                label: "Zone-wise Analytics",
-                icon: ChevronRight,
-                path: "/zone-wise-analytics",
-            },
-        ],
-    },
-    {
-        title: "General Managers (Marketing)",
-        links: [
-            {
-                label: "List of GMs",
-                icon: ChevronRight,
-                path: "/list-of-general-managers",
-            },
-            {
-                label: "Add / Manage GMs",
-                icon: ChevronRight,
-                path: "/add-manage-gms",
-            },
-            {
-                label: "Assign Zones",
-                icon: ChevronRight,
-                path: "/assign-zones",
-            },
-            {
-                label: "Daily Rate Setup",
-                icon: ChevronRight,
-                path: "/daily-rate-setup",
-            },
-            {
-                label: "Add Assistant General Managers",
-                icon: ChevronRight,
-                path: "/add-assistant-general-managers",
-            },
-        ],
-    },
-    {
-        title: "Assistant General Managers (Zonal)",
-        links: [
-            {
-                label: "Add / Manage AGMs",
-                icon: ChevronRight,
-                path: "/add-manage-agms",
-            },
-            {
-                label: "Assign Booking Managers",
-                icon: ChevronRight,
-                path: "/assign-booking-managers",
-            },
-            {
-                label: "Branch Management",
-                icon: ChevronRight,
-                path: "/branch-management",
-            },
-        ],
-    },
-    {
-        title: "Booking Managers",
-        links: [
-            {
-                label: "Add / Manage Booking Managers",
-                icon: ChevronRight,
-                path: "/add-manage-booking-managers",
-            },
-            {
-                label: " Add Farms to Sale (visible in Trader App)",
-                icon: ChevronRight,
-                path: "/add-farms-to-sale",
-            },
-            {
-                label: "Order Fulfilment",
-                icon: ChevronRight,
-                path: "/order-fulfilment",
-            },
-             {
-                label: "Inventory Management (Farm-wise Stock)",
-                icon: ChevronRight,
-                path: "/inventory-management",
-            },
-             {
-                label: "Schedule Deliveries",
-                icon: ChevronRight,
-                path: "/schedule-deliveries",
-            },
-             {
-                label: "Daily Rate Setup (Branch-wise)",
-                icon: ChevronRight,
-                path: "/daily-rate-setup-branch-wise",
-            },
-        ],
-    },
-     {
-        title: "Lifting Supervisor",
-        links: [
-            {
-                label: "View Assigned Orders",
-                icon: ChevronRight,
-                path: "/view-assigned-orders",
-            },
-            {
-                label: "Order Details",
+                label: "Order Detail Page",
                 icon: ChevronRight,
                 path: "/order-details",
             },
-            {
-                label: "Mark Delivery Complete",
-                icon: ChevronRight,
-                path: "/mark-delivery-complete",
-            },
         ],
     },
-      {
-        title: "Finance / Accounts",
+    {
+        title: "Payment & Invoicing",
         links: [
             {
-                label: "View Payments (Pending / Completed)",
+                label: "Payments from Traders",
                 icon: ChevronRight,
-                path: "/view-payments",
+                path: "/payments-traders",
             },
             {
-                label: "Generate Invoices",
+                label: "Payouts to Companies",
                 icon: ChevronRight,
-                path: "/generate-invoices",
+                path: "/payouts-companies",
             },
             {
-                label: "Ledger Reports",
+                label: "Generate Reports",
                 icon: ChevronRight,
-                path: "/ledger-reports",
-            },
-            {
-                label: "Payment Confirmations",
-                icon: ChevronRight,
-                path: "/payment-confirmations",
+                path: "/generate-reports",
             },
         ],
     },
     {
-        title: "Admin Users & Roles",
+        title: "Dispute & Complaint Resolution",
         links: [
             {
-                label: "Add Admin / Sub-admin",
+                label: "Ticket Management",
                 icon: ChevronRight,
-                path: "/add-admin-sub-admin",
-            },
-            {
-                label: "Set Permissions",
-                icon: ChevronRight,
-                path: "/set-permissions",
-            },
-            {
-                label: "Role-wise Access",
-                icon: ChevronRight,
-                path: "/role-wise-access",
+                path: "/ticket-management",
             },
         ],
     },
     {
-        title: "Settings / Config",
+        title: "Notifications & Communication",
         links: [
             {
-                label: "Notifications",
+                label: "System Alerts",
                 icon: ChevronRight,
-                path: "/notifications",
+                path: "/system-alerts",
             },
             {
-                label: "Zones / Cities",
+                label: "Broadcast Messaging",
                 icon: ChevronRight,
-                path: "/zones-cities",
+                path: "/broadcast-messaging",
+            },
+        ],
+    },
+    {
+        title: "Reporting & Analytics",
+        links: [
+            {
+                label: "Dashboard Metrics",
+                icon: ChevronRight,
+                path: "/dashboard-metrics",
             },
             {
-                label: "App Settings",
+                label: "Report Export",
                 icon: ChevronRight,
-                path: "/app-settings",
+                path: "/report-export",
+            },
+        ],
+    },
+    {
+        title: "Access Control & Admin Roles",
+        links: [
+            {
+                label: "Role Definitions",
+                icon: ChevronRight,
+                path: "/role-definitions",
+            },
+        ],
+    },
+    {
+        title: "Settings & Configurations",
+        links: [
+            {
+                label: "Platform Configurations",
+                icon: ChevronRight,
+                path: "/platform-configurations",
+            },
+            {
+                label: "Other Settings",
+                icon: ChevronRight,
+                path: "/other-settings",
             },
         ],
     },
 ];
+
+
+
+
+
 
 export const overviewData = [
     {
