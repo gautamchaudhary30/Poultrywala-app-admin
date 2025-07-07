@@ -9,6 +9,7 @@ import TraderOrders from "./pages/TraderOrders";
 import BroilerRates from "./pages/BroilerRates";
 import TraderPayments from "./pages/TraderPayments";
 import TraderRegistration from "./pages/TraderRegistration"; // ✅ new page created by deepanshu
+import CompanyRegistration from "./Company/CompanyRegistration"; // ✅ new page created by Ashutosh
 
 
 
@@ -42,6 +43,11 @@ function App() {
         path: "trader-registration",
         element: <TraderRegistration />, // ✅ new page created by deepanshu
     },
+    {
+        path: "company-registration",
+        element: <CompanyRegistration />, // ✅ new page created by deepanshu
+    },
+
 
                 // {
                 //     path: "analytics",
@@ -100,6 +106,7 @@ function App() {
     { path: "company-orders", element: <h1 className="title">Company Orders</h1> },
     { path: "sales-report", element: <h1 className="title">Sales Report</h1> },
     { path: "zone-wise-analytics", element: <h1 className="title">Zone-wise Analytics</h1> },
+    { path: "company-registration", element: <h1 className="title">Company Registration</h1> },
 
     // 🧑‍💼 General Managers
     { path: "list-of-general-managers", element: <h1 className="title">List of General Managers</h1> },
