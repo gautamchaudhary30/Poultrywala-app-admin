@@ -84,9 +84,13 @@ export const navbarLinks = [
                 path: "/company-orders",
             },
             {
+            },
+            {
                 label: "Sales Report",
                 icon: ChevronRight,
                 path: "/sales-report",
+            },
+            {
             },
             {
                 label: "Zone-wise Analytics",
