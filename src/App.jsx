@@ -8,6 +8,7 @@ import AllTraders from "./pages/AllTraders";
 import TraderOrders from "./pages/TraderOrders";
 import BroilerRates from "./pages/BroilerRates";
 import TraderPayments from "./pages/TraderPayments";
+import TraderRegistration from "./pages/TraderRegistration"; // ✅ new page created by deepanshu
 
 
 
@@ -36,6 +37,10 @@ function App() {
     {
         path: "trader-payments",
         element: <TraderPayments />, // ✅ Your new page here
+    },
+    {
+        path: "trader-registration",
+        element: <TraderRegistration />, // ✅ new page created by deepanshu
     },
 
                 // {
@@ -86,6 +91,7 @@ function App() {
     { path: "broiler-rates", element: <h1 className="title">Broiler Rates</h1> },
     { path: "disputes-complaints", element: <h1 className="title">Disputes / Complaints</h1> },
     { path: "trader-payments", element: <h1 className="title">Trader Payments</h1> },
+    { path: "trader-registration", element: <h1 clasName="title">Trader Registration</h1> }, // ✅ updateddeepanshu
 
     // 🏢 Company
     { path: "all-contract-companies", element: <h1 className="title">All Contract Companies</h1> },
