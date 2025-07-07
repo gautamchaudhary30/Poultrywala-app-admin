@@ -77,14 +77,21 @@ export const navbarLinks = [
                 label: "Company Orders",
                 icon: ChevronRight,
                 path: "/company-orders",
-            },{
+            },
+            {
                 label: "Sales Report",
                 icon: ChevronRight,
                 path: "/sales-report",
-            },{
+            },
+            {
                 label: "Zone-wise Analytics",
                 icon: ChevronRight,
                 path: "/zone-wise-analytics",
+            },
+            {
+                label: "Company Registration",
+                icon: ChevronRight,
+                path: "/company-registration",
             },
         ],
     },
