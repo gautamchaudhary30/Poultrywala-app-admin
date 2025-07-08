@@ -2,14 +2,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { ThemeProvider } from "@/contexts/theme-context";
 
-import Layout from "@/routes/layout";
+import Layout from "@/routes/Layout";
 import DashboardPage from "@/routes/dashboard/page";
-import AllTraders from "./pages/AllTraders";
-import TraderOrders from "./pages/TraderOrders";
-import BroilerRates from "./pages/BroilerRates";
-import TraderPayments from "./pages/TraderPayments";
-import TraderRegistration from "./pages/TraderRegistration"; // ✅ new page created by deepanshu
-import CompanyRegistration from "./Company/CompanyRegistration"; // ✅ new page created by Ashutosh
+import AllTraders from "./pages/traders/alltraders/AllTraders";
+import TraderOrders from "./pages/traders/alltraders/AllTraders";
+import BroilerRates from "./pages/traders/BroilerRates";
+import TraderPayments from "./pages/traders/TraderPayments";
+import TraderRegistration from "./pages/traders/alltraders/TraderRegistration";
+import CompanyRegistration from "./pages/Company/CompanyRegistration"; // ✅ new page created by deepanshu
 
 
 
@@ -45,9 +45,8 @@ function App() {
     },
     {
         path: "company-registration",
-        element: <CompanyRegistration />, // ✅ new page created by deepanshu
+        element: <CompanyRegistration />, // ✅ new page created by Ashutosh
     },
-
 
                 // {
                 //     path: "analytics",
@@ -97,7 +96,7 @@ function App() {
     { path: "broiler-rates", element: <h1 className="title">Broiler Rates</h1> },
     { path: "disputes-complaints", element: <h1 className="title">Disputes / Complaints</h1> },
     { path: "trader-payments", element: <h1 className="title">Trader Payments</h1> },
-    { path: "trader-registration", element: <h1 clasName="title">Trader Registration</h1> }, // ✅ updateddeepanshu
+    { path: "trader-registration", element: <h1 clasName="title">Trader Registration</h1> }, // ✅ created by deepanshu
 
     // 🏢 Company
     { path: "all-contract-companies", element: <h1 className="title">All Contract Companies</h1> },
@@ -106,7 +105,7 @@ function App() {
     { path: "company-orders", element: <h1 className="title">Company Orders</h1> },
     { path: "sales-report", element: <h1 className="title">Sales Report</h1> },
     { path: "zone-wise-analytics", element: <h1 className="title">Zone-wise Analytics</h1> },
-    { path: "company-registration", element: <h1 className="title">Company Registration</h1> },
+    { path: "company-registration", element: <h1 className="title">Company Registration</h1> },  // created by Ashutosh
 
     // 🧑‍💼 General Managers
     { path: "list-of-general-managers", element: <h1 className="title">List of General Managers</h1> },

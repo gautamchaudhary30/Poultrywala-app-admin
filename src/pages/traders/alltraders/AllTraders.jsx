@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Dummy data: You can add `source` as "Website" or "App"
 const mockTraders = [
   {
     id: 1,
@@ -9,6 +10,7 @@ const mockTraders = [
     email: "rajesh@example.com",
     address: "123 Main Road, Indore",
     businessAddress: "Farm Area, Dewas",
+    source: "Website", // 👈 Show where registered from
     bankDetails: {
       accountHolder: "Rajesh Sharma",
       accountNumber: "1234567890",
@@ -17,13 +19,14 @@ const mockTraders = [
     },
   },
   {
-    id: 1,
+    id: 2,
     name: "Mukesh Sharma",
     businessName: "FreshFarm Poultry",
     phone: "9876543210",
     email: "mukesh@example.com",
     address: "123 Main Road, Indore",
     businessAddress: "Farm Area, Dewas",
+    source: "App",
     bankDetails: {
       accountHolder: "Mukesh Sharma",
       accountNumber: "1234567890",
@@ -31,31 +34,33 @@ const mockTraders = [
       bankName: "State Bank of India",
     },
   },
-  {
-    id: 1,
-    name: "Ashok Sharma",
-    businessName: "FreshFarm Poultry",
-    phone: "9876543210",
-    email: "ashok@example.com",
-    address: "123 Main Road, Indore",
-    businessAddress: "Farm Area, Dewas",
-    bankDetails: {
-      accountHolder: "Ashok Sharma",
-      accountNumber: "1234567890",
-      ifsc: "SBIN0001234",
-      bankName: "State Bank of India",
-    },
-  },
-  // Add more mock traders as needed
 ];
 
 export default function AllTraders() {
   const [selectedTrader, setSelectedTrader] = useState(null);
 
+  // ✅ Step 1: Button click pe registration form new tab me khule
+  const openRegistrationForm = () => {
+    // 👇 Make sure this route is registered in App.jsx
+    window.open("/trader-registration", "_blank"); // opens new tab
+  };
+
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-4">All Traders</h1>
+      {/* Header and Button */}
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="text-2xl font-semibold">All Traders</h1>
 
+        {/* ✅ Step 2: Button to open new tab with trader registration form */}
+        <button
+          onClick={openRegistrationForm}
+          className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition"
+        >
+          + New Trader Registration
+        </button>
+      </div>
+
+      {/* Trader Table */}
       <div className="overflow-x-auto">
         <table className="min-w-full border border-slate-200 dark:border-slate-700">
           <thead className="bg-slate-100 dark:bg-slate-800">
@@ -66,9 +71,11 @@ export default function AllTraders() {
               <th className="px-4 py-2 text-left">Email</th>
               <th className="px-4 py-2 text-left">Address</th>
               <th className="px-4 py-2 text-left">Business Address</th>
+              <th className="px-4 py-2 text-left">Registered From</th>
               <th className="px-4 py-2 text-left">Bank Details</th>
             </tr>
           </thead>
+
           <tbody>
             {mockTraders.map((trader) => (
               <tr key={trader.id} className="border-t dark:border-slate-700">
@@ -78,6 +85,7 @@ export default function AllTraders() {
                 <td className="px-4 py-2">{trader.email}</td>
                 <td className="px-4 py-2">{trader.address}</td>
                 <td className="px-4 py-2">{trader.businessAddress}</td>
+                <td className="px-4 py-2">{trader.source}</td>
                 <td className="px-4 py-2">
                   <button
                     onClick={() => setSelectedTrader(trader)}
