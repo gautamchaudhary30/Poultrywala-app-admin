@@ -311,11 +311,11 @@ export const navbarLinks = [
                 icon: ChevronRight,
                 path: "/approved-companies",
             },
-            {
-                label: "Trader Registration",
-                icon: ChevronRight,
-                path: "/trader-registration",
-            }
+            // {
+            //     label: "Trader Registration",
+            //     icon: ChevronRight,
+            //     path: "/trader-registration",
+            // }
         ],
     },
     {

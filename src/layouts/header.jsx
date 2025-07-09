@@ -51,7 +51,7 @@ export const Header = ({ collapsed, setCollapsed }) => {
                 </button>
                 <button className="size-10 overflow-hidden rounded-full">
                     <img
-                        src={profileImg}
+                        src={"https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"}    //{profileImg}
                         alt="profile image"
                         className="size-full object-cover"
                     />

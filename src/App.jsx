@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/contexts/theme-context";
 
 import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/page";
+import TraderOnboarding from "./pages/usermanagenment/TraderOnbording";
+import TraderRegistration from "./pages/usermanagenment/TraderRegistration";
 // import AllTraders from "./pages/AllTraders";
 // import TraderOrders from "./pages/TraderOrders";
 // import BroilerRates from "./pages/BroilerRates";
@@ -165,7 +167,10 @@ function App() {
         { path: "quick-actions", element: <h1 className="title">Quick Actions</h1> },
 
         // 2. User Management
-        { path: "trader-onboarding", element: <h1 className="title">Trader Onboarding & Management</h1> },
+        { path: "trader-onboarding", element: <TraderOnboarding /> },
+        { path: "trader-registration", element: <TraderRegistration /> },
+
+        // { path: "trader-onboarding", element: <h1 className="title">Trader Onboarding & Management</h1> },
         { path: "approved-traders", element: <h1 className="title">Approved Traders</h1> },
         { path: "company-onboarding", element: <h1 className="title">Company Onboarding & Management</h1> },
         { path: "onboarding-requests", element: <h1 className="title">Onboarding Requests</h1> },
