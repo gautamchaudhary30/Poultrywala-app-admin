@@ -6,6 +6,9 @@ import Layout from "@/routes/layout";
 import DashboardPage from "@/routes/dashboard/page";
 import TraderOnboarding from "./pages/usermanagenment/TraderOnbording";
 import TraderRegistration from "./pages/usermanagenment/TraderRegistration";
+import CompanyOnboarding from "./pages/usermanagenment/CompanyOnbording";
+import CompanyRegistration from "./pages/usermanagenment/CompanyRegistration";
+import ApprovedTraders from "./pages/usermanagenment/AproovedTraders";
 // import AllTraders from "./pages/AllTraders";
 // import TraderOrders from "./pages/TraderOrders";
 // import BroilerRates from "./pages/BroilerRates";
@@ -169,12 +172,17 @@ function App() {
         // 2. User Management
         { path: "trader-onboarding", element: <TraderOnboarding /> },
         { path: "trader-registration", element: <TraderRegistration /> },
+        { path: "company-onboarding", element: <CompanyOnboarding /> },
+        { path: "company-registration", element: <CompanyRegistration /> },
+        { path: "approved-traders", element: <ApprovedTraders /> },
 
-        // { path: "trader-onboarding", element: <h1 className="title">Trader Onboarding & Management</h1> },
+         { path: "trader-onboarding", element: <h1 className="title">Trader Onboarding & Management</h1> },
         { path: "approved-traders", element: <h1 className="title">Approved Traders</h1> },
         { path: "company-onboarding", element: <h1 className="title">Company Onboarding & Management</h1> },
         { path: "onboarding-requests", element: <h1 className="title">Onboarding Requests</h1> },
         { path: "approved-companies", element: <h1 className="title">Approved Companies</h1> },
+        { path: "trader-registration", element: <h1 className="title">Trader Registration</h1> },
+        {path: "company-registration", element: <h1 className="title">Company Registration</h1> },
 
         // 3. Order & Trade Management
         { path: "live-orders", element: <h1 className="title">Live Orders Feed</h1> },
