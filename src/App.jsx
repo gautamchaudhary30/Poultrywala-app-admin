@@ -9,6 +9,7 @@ import TraderRegistration from "./pages/usermanagenment/TraderRegistration";
 import CompanyOnboarding from "./pages/usermanagenment/CompanyOnbording";
 import CompanyRegistration from "./pages/usermanagenment/CompanyRegistration";
 import ApprovedTraders from "./pages/usermanagenment/AproovedTraders";
+import OnboardingRequests from "./pages/usermanagenment/OnboardingRequests";
 // import AllTraders from "./pages/AllTraders";
 // import TraderOrders from "./pages/TraderOrders";
 // import BroilerRates from "./pages/BroilerRates";
@@ -175,6 +176,8 @@ function App() {
         { path: "company-onboarding", element: <CompanyOnboarding /> },
         { path: "company-registration", element: <CompanyRegistration /> },
         { path: "approved-traders", element: <ApprovedTraders /> },
+        { path: "onboarding-requests", element: <OnboardingRequests /> },
+       
 
          { path: "trader-onboarding", element: <h1 className="title">Trader Onboarding & Management</h1> },
         { path: "approved-traders", element: <h1 className="title">Approved Traders</h1> },
