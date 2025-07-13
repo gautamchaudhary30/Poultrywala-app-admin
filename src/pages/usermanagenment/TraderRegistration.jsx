@@ -64,8 +64,8 @@ const TraderRegistration = () => {
   };
 
   return (
-    <div className="max-w-[885px] mx-auto p-6 bg-white rounded shadow overflow-y-auto max-h-[90vh]">
-      <h2 className="text-2xl font-bold mb-4 text-center">Trader Registration</h2>
+    <div className="max-w-[885px] mx-auto p-6 bg-white rounded shadow overflow-y-auto max-h-[90vh] dark:bg-slate-800">
+      <h2 className="text-3xl font-semibold mb-4 text-center dark:text-gray-100">Trader Registration</h2>
 
       <Formik
         initialValues={initialValues}
@@ -78,18 +78,18 @@ const TraderRegistration = () => {
       >
         {({ setFieldValue }) => (
           <Form>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <TextField label="Full Name" name="name" />
-              <TextField label="Contact Number" name="contact" type="tel" />
-              <TextField label="Email Address" name="email" type="email" />
-              <TextField label="Aadhar Number" name="aadharNumber" />
-              <TextField label="Business Name" name="businessName" />
-              <TextField label="PIN Code" name="pin" />
-              <TextField label="City" name="city" />
-              <TextField label="State" name="state" />
-              <TextField label="Licence Number" name="licence" />
-              <TextField label="GST Number" name="gst" />
-              <TextField label="Account Number" name="accountNumber" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 dark:text-gray-400">
+              <TextField  label="Full Name" name="name" />
+              <TextField  label="Contact Number" name="contact" type="tel" />
+              <TextField  label="Email Address" name="email" type="email" />
+              <TextField  label="Aadhar Number" name="aadharNumber" />
+              <TextField  label="Business Name" name="businessName" />
+              <TextField  label="PIN Code" name="pin" />
+              <TextField  label="City" name="city" />
+              <TextField  label="State" name="state" />
+              <TextField  label="Licence Number" name="licence" />
+              <TextField  label="GST Number" name="gst" />
+              <TextField  label="Account Number" name="accountNumber" />
 
               <FileUpload label="Upload Aadharcard" name="adharcard" onChange={handleFileChange} setFieldValue={setFieldValue} />
               <FileUpload label="Upload Business Licence" name="businessLicence" onChange={handleFileChange} setFieldValue={setFieldValue} />

@@ -39,6 +39,12 @@ const CompanyRegistration = () => {
     farmsManaged: "",
     productionVolume: "",
     serviceArea: "",
+    AccountHolderName: "",
+    AccountNumber: "",
+    IFSC: "",
+    BankName: "",
+
+    
     companyReg: null,
     bankDetails: null,
     license: null,
@@ -51,7 +57,7 @@ const CompanyRegistration = () => {
 
   return (
     <div className="max-w-[885px] mx-auto p-6 bg-white rounded shadow overflow-y-auto max-h-[90vh]">
-      <h2 className="text-2xl font-bold mb-4 text-center">Company Registration</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-center">Company Registration</h2>
 
       <Formik
         initialValues={initialValues}
@@ -64,7 +70,7 @@ const CompanyRegistration = () => {
           <Form>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <TextField label="Company Name" name="companyName" />
-              <TextField label="Point of Contact" name="contactPerson" />
+              <TextField label="Contact Number" name="contactPerson" />
               <SelectField
                 label="Scale of Operation"
                 name="scale"
@@ -73,8 +79,12 @@ const CompanyRegistration = () => {
               <TextField label="Farms Managed" name="farmsManaged" type="number" />
               <TextField label="Production Volume" name="productionVolume" />
               <TextField label="Service Area" name="serviceArea" />
+              <TextField label="Account Holder Name" name="AccountHolderName" />
+              <TextField label="Account Number" name="AccountNumber" type="text" />
+              <TextField label="IFSC Code" name="IFSC" />
+              <TextField label="Bank Name" name="BankName" />
 
-              <FileUpload
+              {/* <FileUpload
                 label="Upload Company Registration"
                 name="companyReg"
                 setFieldValue={setFieldValue}
@@ -91,7 +101,7 @@ const CompanyRegistration = () => {
                 name="license"
                 setFieldValue={setFieldValue}
                 onChange={handleFileChange}
-              />
+              /> */}
               <FileUpload
                 label="Upload FSSAI (Optional)"
                 name="fssai"

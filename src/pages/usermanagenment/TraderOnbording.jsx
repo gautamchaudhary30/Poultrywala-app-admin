@@ -55,7 +55,7 @@ export default function TraderOnbording() {
     <div className="p-6">
       {/* Header and Button */}
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-semibold">Traders Onboarded</h1>
+        <h1 className="text-3xl font-semibold dark:text-gray-100">Traders Onboarded</h1>
 
         {/* ✅ Step 2: Button to open new tab with trader registration form */}
         <button
@@ -68,9 +68,9 @@ export default function TraderOnbording() {
 
       {/* Trader Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-slate-200 dark:border-slate-700">
-          <thead className="bg-slate-100 dark:bg-slate-800">
-            <tr>
+        <table className="min-w-full border border-slate-200 dark:border-gray-300">
+          <thead>
+            <tr className=" bg-slate-100 dark:bg-gray-100">
               <th className="px-4 py-2 text-left">Trader Name</th>
               <th className="px-4 py-2 text-left">Business Name</th>
               <th className="px-4 py-2 text-left">Phone</th>
@@ -84,7 +84,7 @@ export default function TraderOnbording() {
 
           <tbody>
             {mockTraders.map((trader) => (
-              <tr key={trader.id} className="border-t dark:border-slate-700">
+              <tr key={trader.id} className="border-t dark:border-gray-300 dark:bg-gray-900 dark:text-gray-400">
                 <td className="px-4 py-2">{trader.name}</td>
                 <td className="px-4 py-2">{trader.businessName}</td>
                 <td className="px-4 py-2">{trader.phone}</td>

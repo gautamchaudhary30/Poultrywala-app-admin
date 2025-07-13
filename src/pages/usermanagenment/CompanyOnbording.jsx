@@ -48,7 +48,7 @@ export default function CompanyOnboarding() {
     <div className="p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-semibold">Companies Onboarded</h1>
+        <h1 className="text-3xl font-semibold dark:text-gray-100">Companies Onboarded</h1>
         <button
           onClick={openCompanyRegistrationForm}
           className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 transition"
@@ -59,8 +59,8 @@ export default function CompanyOnboarding() {
 
       {/* Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-slate-200 dark:border-slate-700">
-          <thead className="bg-slate-100 dark:bg-slate-800">
+        <table className="min-w-full border border-slate-200 dark:border-grey-700">
+          <thead className="bg-slate-100 dark:bg-grey-800">
             <tr>
               <th className="px-4 py-2 text-left">Company Name</th>
               <th className="px-4 py-2 text-left">Contact Person</th>
@@ -74,7 +74,7 @@ export default function CompanyOnboarding() {
           </thead>
           <tbody>
             {mockCompanies.map((company) => (
-              <tr key={company.id} className="border-t dark:border-slate-700">
+              <tr key={company.id} className="border-t dark:border-slate-700 dark:text-gray-400 dark:bg-slate-900">
                 <td className="px-4 py-2">{company.name}</td>
                 <td className="px-4 py-2">{company.contactPerson}</td>
                 <td className="px-4 py-2">{company.scale}</td>
@@ -96,7 +96,7 @@ export default function CompanyOnboarding() {
         </table>
       </div>
 
-      {/* Modal */}
+      {/* Modal
       {selectedCompany && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white dark:bg-slate-900 p-6 rounded shadow-md max-w-md w-full">
@@ -129,7 +129,7 @@ export default function CompanyOnboarding() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

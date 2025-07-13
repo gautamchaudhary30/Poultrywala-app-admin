@@ -104,8 +104,8 @@ let table = new DataTable('#myTable');
 
 
 const statusColors = {
-    Approved: 'bg-green-400 text-white-700',
-    Pending: 'bg-yellow-200 text-yellow-700',
+    Approved: 'bg-green-300 text-white-700',
+    Pending: 'bg-orange-200 text-yellow-700',
     Declined: 'bg-red-200 text-red-700',
 };
 
@@ -130,13 +130,13 @@ const OnboardingRequests = () => {
     return (
         <div className='p-6'>
             {/* <div className='flex items-center justify-between mb-4'></div> */}
-            <h1 className='text-2xl font-semibold mb-4'>Onboarding Requests</h1>
+            <h1 className='text-3xl font-semibold mb-4 dark:text-gray-100'>Onboarding Requests</h1>
             <div className='flex flex-col mb-4'>
                 <div className="flex items-center gap-5 p-x-1 w-full mb-4">
                     <select
                         value={status}
                         onChange={(e) => setstatus(e.target.value)}
-                        className="p-2 border rounded "
+                        className="p-1 border rounded "
                     >
                         <option value="">All Status</option>
                         <option value="pending">Pending</option>
@@ -149,7 +149,7 @@ const OnboardingRequests = () => {
                     <select
                         value={request}
                         onChange={(e) => setrequest(e.target.value)}
-                        className="p-2 border rounded "
+                        className="p-1 border rounded "
                     >
                         <option value="">All Request Types</option>
                         <option value="company">Company</option>
@@ -163,30 +163,30 @@ const OnboardingRequests = () => {
 
             </div>
             <div className="overflow-x-auto">
-                <table className="min-w-[1089px] text-sm border border-gray-200 rounded ">
-                    <thead className="bg-grey-100 text-left">
+                <table className="min-w-[1089px] text-sm border border-gray-300 rounded ">
+                    <thead className="bg-grey-100 text-left dark:bg-gray-100">
                         <tr>
-                            <th className="p-2">BUISNESS TYPE</th>
-                            <th className="p-2">COMPANY NAME</th>
-                            <th className="p-2">HEAD NAME</th>
-                            <th className="p-2">CONTACT</th>
-                            <th className="p-2">LOCATION</th>
-                            <th className="p-2">BANK</th>
-                            <th className="p-2">STATUS</th>
-                            <th className="p-2 text-center">ACTION</th>
+                            <th className="p-4 text-xs">BUISNESS TYPE</th>
+                            <th className="p-4 text-xs">COMPANY NAME</th>
+                            <th className="p-4 text-xs">HEAD NAME</th>
+                            <th className="p-4 text-xs">CONTACT</th>
+                            <th className="p-4 text-xs">LOCATION</th>
+                            <th className="p-4 text-xs">BANK</th>
+                            <th className="p-4 text-xs">STATUS</th>
+                            <th className="p-4 text-xs text-center">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filterData.map((trader, index) => (
-                            <tr key={index} className="border-t">
-                                <td className="p-2"><div className="font-small">{trader.business}</div></td> 
-                                <td className="p-2"><div className="font-small">{trader.company}</div></td>
-                                <td className="p-2"><div className="font-small">{trader.head}</div></td>
-                                <td className="p-2"><div className="font-small">{trader.contact}</div></td>
-                                <td className="p-2"><div className="font-small">{trader.location}</div></td>
-                                <td className="p-2"><div className="font-small">{trader.bank}</div></td>
-                                <td className="p-2"><span className={`px-2 py-1 rounded text-xs text-neutral-950 font-medium ${statusColors[trader.status]}`}>{trader.status}</span></td>
-                                <td className="p-2"><div className="font-medium flex gap-1">
+                            <tr key={index} className="border-t border-gray-300 dark:text-gray-300 dark:bg-slate-900">
+                                <td className="p-4"><div className="font-small">{trader.business}</div></td> 
+                                <td className="p-4"><div className="font-small">{trader.company}</div></td>
+                                <td className="p-4"><div className="font-small">{trader.head}</div></td>
+                                <td className="p-4"><div className="font-small">{trader.contact}</div></td>
+                                <td className="p-4"><div className="font-small">{trader.location}</div></td>
+                                <td className="p-4"><div className="font-small">{trader.bank}</div></td>
+                                <td className="p-4"><span className={`px-2 py-1 rounded-full text-xs text-center text-neutral-700 font-medium ${statusColors[trader.status]}`}>{trader.status}</span></td>
+                                <td className="p-4"><div className="font-medium flex gap-1">
                                     {<button className="text-blue-600  px-1 py-1 rounded active:text-blue-800 active:scale-95">View</button>}
                                     {<button className="text-green-600 px-1 py-1 rounded active:text-green-800 active:scale-95">Aproove</button>}
                                     {<button className="text-red-600 px-1 py-1 rounded active:text-red-800 active:scale-95">Decline</button>}</div></td >
@@ -199,14 +199,14 @@ const OnboardingRequests = () => {
 
             </div>
             <div className="flex justify-between items-center mt-4 text-sm">
-                <span>
+                <span className="space-x-2 text-left px-2 py-1 dark:text-gray-300">
                     Showing {filterData.length > 0 ? 1 : 0} to {filterData.length} of {traderData.length} results
                 </span>
-                <div className="space-x-2">
-                    <button className="px-2 py-1 bg-gray-200 rounded">Previous</button>
-                    <button className="px-2 py-1 bg-green-500 text-white rounded">1</button>
-                    <button className="px-2 py-1 bg-gray-200 rounded">2</button>
-                    <button className="px-2 py-1 bg-gray-200 rounded">Next</button>
+                <div className="space-x-2 text-right">
+                    <button className="px-2 py-1 m-2 bg-gray-200 rounded">Previous</button>
+                    <button className="px-2 py-1 m-2 bg-green-500 text-white rounded">1</button>
+                    <button className="px-2 py-1 m-2 bg-gray-200 rounded">2</button>
+                    <button className="px-2 py-1 m-2 bg-gray-200 rounded">Next</button>
                 </div>
             </div>
 
