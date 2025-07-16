@@ -287,7 +287,7 @@ export const navbarLinks = [
         title: "User Management",
         links: [
             {
-                label: "Trader Onboarding & Management",
+                label: "Trader Onboarding",
                 icon: ChevronRight,
                 path: "/trader-onboarding",
             },
@@ -297,20 +297,31 @@ export const navbarLinks = [
                 path: "/approved-traders",
             },
             {
-                label: "Company Onboarding & Management",
+                label: "Company Onboarding",
                 icon: ChevronRight,
                 path: "/company-onboarding",
             },
-            {
-                label: "Onboarding Requests",
+               {
+                label: "Aprooved Companies",
                 icon: ChevronRight,
-                path: "/onboarding-requests",
+                path: "/aprooved-companies",
             },
-            {
-                label: "Approved Companies",
-                icon: ChevronRight,
-                path: "/approved-companies",
-            },
+            // {
+            //     label: "Onboarding Requests",
+            //     icon: ChevronRight,
+            //     path: "/onboarding-requests",
+            // },
+            // { 
+            //     label: "Company Onboarding",
+            //     icon: ChevronRight,
+            //     path: "/company-onboarding",
+            // },
+            // {
+            //     label: "Trader Onboarding",
+            //     icon: ChevronRight,
+            //     path: "/trader-onboarding",
+            // },
+         
             // {
             //     label: "Trader Registration",
             //     icon: ChevronRight,

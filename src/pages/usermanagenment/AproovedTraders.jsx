@@ -161,7 +161,7 @@ const statusColors = {
 
 const ApprovedTraders = () => {
   const [search, setSearch] = useState('');
-  const [statusFilter, setStatusFilter] = useState('');
+  const [districtFilter, setDistrictFilter] = useState('');
   const [stateFilter, setStateFilter] = useState('');
   const [page, setpage] = useState(1)
 
@@ -181,10 +181,10 @@ const ApprovedTraders = () => {
       field.toLowerCase().includes(search.toLowerCase())
     );
 
-  const matchesStatus = statusFilter ? trader.status === statusFilter : true;
+  const matchesDistrict = districtFilter ? trader.location.includes(districtFilter) : true;
   const matchesState = stateFilter ? trader.location.includes(stateFilter) : true;
 
-  return matchesSearch && matchesStatus && matchesState;
+  return matchesSearch && matchesDistrict && matchesState && trader.status === 'Approved';
 });
 
 
@@ -192,7 +192,7 @@ const ApprovedTraders = () => {
     <div className="p-6">
       <div className="flex items-center justify-between p-1 mb-4">
         <h2 className="text-3xl font-semibold dark:text-gray-100">Approved Traders</h2>
-        <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-800 active:bg-green-900 active:scale-95"><i class="ri-download-fill"></i>Export</button>
+        {/* <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-800 active:bg-green-900 active:scale-95"><i class="ri-download-fill"></i>Export</button> */}
       </div>
 
       <p className="text-sm text-gray-500 mb-4">Manage and monitor approved trader accounts</p>
@@ -223,14 +223,22 @@ const ApprovedTraders = () => {
   <div className="flex gap-2 w-full md:w-auto">
     {/* Status Filter */}
     <select
-      value={statusFilter}
-      onChange={(e) => setStatusFilter(e.target.value)}
+      value={districtFilter}
+      onChange={(e) => setDistrictFilter(e.target.value)}
       className="p-2 border rounded-lg transition"
     >
-      <option className="p-2 border rounded transition" value="">All Status</option>
-      <option className="p-2 border rounded transition" value="Approved">Approved</option>
-      <option className="p-2 border rounded transition" value="Pending">Pending</option>
-      <option className="p-2 border rounded transition" value="Rejected">Rejected</option>
+      <option className="p-2 border rounded transition" value="">All District</option>
+      <option value="Ahmedabad">Ahmedabad</option>
+      <option value="Jaipur">Jaipur</option>    
+      <option value="Pune">Pune</option>
+      <option value="Bengaluru">Bengaluru</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Lucknow">Lucknow</option>
+      <option value="New Delhi">New Delhi</option>
+      <option value="Ludhiana">Ludhiana</option>
+      <option value="Patna">Patna</option>
+      <option value="Faridabad">Faridabad</option>
+      
     </select>
 
     {/* State Filter */}

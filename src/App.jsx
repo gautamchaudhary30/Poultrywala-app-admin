@@ -11,6 +11,10 @@ import CompanyRegistration from "./pages/usermanagenment/CompanyRegistration";
 import ApprovedTraders from "./pages/usermanagenment/AproovedTraders";
 import OnboardingRequests from "./pages/usermanagenment/OnboardingRequests";
 import TraderProfile from "./pages/usermanagenment/TraderProfile";
+import AproovedCompanies from "./pages/usermanagenment/AproovedCompanies";
+import CompanyProfile from "./pages/usermanagenment/CompanyProfile";
+import TraderOnbording from "./pages/usermanagenment/TraderOnbording";
+import QuickActions from "./pages/QuickActions"
 // import AllTraders from "./pages/AllTraders";
 // import TraderOrders from "./pages/TraderOrders";
 // import BroilerRates from "./pages/BroilerRates";
@@ -169,7 +173,7 @@ function App() {
         // 1. Dashboard Overview
         { index: true, element: <DashboardPage /> },
         { path: "summary-cards", element: <h1 className="title">Summary Cards</h1> },
-        { path: "quick-actions", element: <h1 className="title">Quick Actions</h1> },
+        // { path: "quick-actions", element: <h1 className="title">Quick Actions</h1> },
 
         // 2. User Management
         { path: "trader-onboarding", element: <TraderOnboarding /> },
@@ -178,16 +182,19 @@ function App() {
         { path: "company-registration", element: <CompanyRegistration /> },
         { path: "approved-traders", element: <ApprovedTraders /> },
         { path: "onboarding-requests", element: <OnboardingRequests /> },
-        { path: "trader-registration/:id", element: <TraderProfile /> },
-       
+        { path: "trader-registration/:id", element: <TraderProfile /> },  
+        { path: "aprooved-companies", element: <AproovedCompanies /> },     
+        { path: "company-profile/:id", element: <CompanyProfile /> }, // Assuming you have a CompanyProfile component
+        { path: "trader-onbording", element: <TraderOnbording /> },
+        { path: "quick-actions", element: <QuickActions /> },
 
-         { path: "trader-onboarding", element: <h1 className="title">Trader Onboarding & Management</h1> },
-        { path: "approved-traders", element: <h1 className="title">Approved Traders</h1> },
-        { path: "company-onboarding", element: <h1 className="title">Company Onboarding & Management</h1> },
-        { path: "onboarding-requests", element: <h1 className="title">Onboarding Requests</h1> },
-        { path: "approved-companies", element: <h1 className="title">Approved Companies</h1> },
-        { path: "trader-registration", element: <h1 className="title">Trader Registration</h1> },
-        {path: "company-registration", element: <h1 className="title">Company Registration</h1> },
+        //  { path: "trader-onboarding", element: <h1 className="title">Trader Onboarding & Management</h1> },
+        // { path: "approved-traders", element: <h1 className="title">Approved Traders</h1> },
+        // { path: "company-onboarding", element: <h1 className="title">Company Onboarding & Management</h1> },
+        // { path: "onboarding-requests", element: <h1 className="title">Onboarding Requests</h1> },
+        // { path: "approved-companies", element: <h1 className="title">Approved Companies</h1> },
+        // { path: "trader-registration", element: <h1 className="title">Trader Registration</h1> },
+        // {path: "company-registration", element: <h1 className="title">Company Registration</h1> },
 
         // 3. Order & Trade Management
         { path: "live-orders", element: <h1 className="title">Live Orders Feed</h1> },
