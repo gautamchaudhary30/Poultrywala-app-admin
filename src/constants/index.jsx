@@ -271,11 +271,7 @@ export const navbarLinks = [
                 icon: Home,
                 path: "/",
             },
-            {
-                label: "Summary Cards",
-                icon: ChartColumn,
-                path: "/summary-cards",
-            },
+          
             {
                 label: "Quick Actions",
                 icon: NotepadText,

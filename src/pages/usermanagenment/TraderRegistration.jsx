@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { tradersData } from './AproovedTraders';
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -73,7 +74,27 @@ const TraderRegistration = () => {
         validateOnChange={true}
         validateOnBlur={true}
         onSubmit={(values) => {
+          // pushing submit data on tradersData array
+          tradersData.push({
+            id: tradersData.length + 1,
+            name: values.name,
+            contact: values.contact,
+            email: values.email,
+            aadharNumber: values.aadharNumber,
+            businessName: values.businessName,
+            status: 'Approved',
+            pin: values.pin,
+            city: values.city,
+            state: values.state,
+            licence: values.licence,
+            gst: values.gst,
+            accountNumber: values.accountNumber,
+            adharcard: values.adharcard.name,
+            businessLicence: values.businessLicence.name,
+            pancard: values.pancard.name
+          });
           alert('Form submitted successfully!');
+          resetForm();
         }}
       >
         {({ setFieldValue }) => (
@@ -93,7 +114,7 @@ const TraderRegistration = () => {
 
               <FileUpload label="Upload Aadharcard" name="adharcard" onChange={handleFileChange} setFieldValue={setFieldValue} />
               <FileUpload label="Upload Business Licence" name="businessLicence" onChange={handleFileChange} setFieldValue={setFieldValue} />
-              <FileUpload label="Upload Address Proof" name="addressProof" onChange={handleFileChange} setFieldValue={setFieldValue} />
+              <FileUpload label="Upload PAN Card" name="addressProof" onChange={handleFileChange} setFieldValue={setFieldValue} />
             </div>
 
             <button
@@ -110,7 +131,7 @@ const TraderRegistration = () => {
 };
 
 const TextField = ({ label, name, type = 'text' }) => {
-  const handleKeyPress = (e) => {
+  const handleKey = (e) => {
     if (name === "name" || name === "businessName") {
       const allowed = /^[A-Za-z\s]*$/;
       if (!allowed.test(e.key)) {
@@ -128,7 +149,7 @@ const TextField = ({ label, name, type = 'text' }) => {
         type={type}
         className="px-4 py-2 border rounded focus:outline-none focus:ring"
         placeholder={`Enter ${label.toLowerCase()}`}
-        onKeyPress={handleKeyPress}
+        onKeyPress={handleKey}
       />
       <ErrorMessage
         name={name}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const mockTrader = [
+export const mockTrader = [
   {
     id: 1,
     name: "AgroFresh Pvt Ltd",
@@ -260,40 +260,39 @@ const mockTrader = [
 
 
 const statusColors = {
-  Approved: "bg-green-400 text-green-800",
+
   Pending: "bg-yellow-200 text-yellow-900",
   Declined: "bg-red-200 text-red-900",
 };
 
 export default function TraderOnboarding() {
   const [selectedTrader, setSelectedTrader] = useState(null);
-  const [statusFilter, setStatusFilter] = useState("");
+  const [District, setDistrict] = useState("");
+  const [status,setStatus] = useState("");
   const navigate = useNavigate();
 
-  const filteredTrader = mockTrader.filter(trader =>
-    statusFilter ? trader.verified.toLowerCase() === statusFilter.toLowerCase() : true
-
-    
-
-
-  );
+  const filteredTrader = mockTrader.filter((trader) => {
+    const matchesStatus = ["Pending", "Declined"].includes(trader.verified)
+    const matchesDistrict = District ? trader.serviceArea.includes(District) : true;
+    return matchesStatus && matchesDistrict;
+  });
 
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-3xl font-semibold dark:text-gray-100">Trader Onboarding</h1>
-        <button
+        <h1 className="text-3xl font-semibold dark:text-gray-100">Trader Onboarding Requests</h1>
+        {/* <button
           onClick={() => navigate("/trader-registration")}
           className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
         >
           + New Trader
-        </button>
+        </button> */}
       </div>
 
       <div className="flex gap-4 mb-4">
         <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
+          value={status}
+          onChange={(e) =>setStatus(e.target.value)}
           className="p-2 border rounded"
         >
           <option value="">All Status</option>
@@ -307,14 +306,14 @@ export default function TraderOnboarding() {
           <thead className="bg-slate-100 dark:bg-slate-800 text-left justify-between">
             <tr>
               
-              <th className="p-4 text-left">Trader Name</th>
-              <th className="p-4 text-left">Phone</th>
-              <th className="p-4 text-left">Operation Scale</th>
-              <th className="p-4 text-left">Location</th>
-              <th className="p-4 text-left">Production</th>
-              <th className="p-4 text-left">GST No</th>
-              <th className="p-4 text-left">Status</th>
-              <th className="p-4 text-left">Actions</th>
+              <th className="p-4 text-center">Trader Name</th>
+              <th className="p-4 text-center">Phone</th>
+              <th className="p-4 text-center">Operation Scale</th>
+              <th className="p-4 text-center">Location</th>
+              <th className="p-4 text-center">Production</th>
+              <th className="p-4 text-center">GST No</th>
+              <th className="p-4 text-center">Status</th>
+              <th className="p-4 text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -323,31 +322,31 @@ export default function TraderOnboarding() {
                 key={trader.id}
                 className="border-t dark:border-slate-700 text-left justify-between dark:text-gray-200"
               >
-                <td className="p-4 text-left">{trader.name}</td>
-                <td className="p-4 text-left">{trader.contactPerson}</td>
-                <td className="p-4 text-left">{trader.scale}</td>
-                <td className="p-4 text-left">{trader.serviceArea}</td>
-                <td className="p-4 text-left">{trader.productionVolume}</td>
-                <td className="p-4 text-left">{trader.gstNumber}</td>
-                <td className="p-4 text-left">
+                <td className="p-4 text-center">{trader.name}</td>
+                <td className="p-4 text-center">{trader.contactPerson}</td>
+                <td className="p-4 text-center">{trader.scale}</td>
+                <td className="p-4 text-center">{trader.serviceArea}</td>
+                <td className="p-4 text-center">{trader.productionVolume}</td>
+                <td className="p-4 text-center">{trader.gstNumber}</td>
+                <td className="p-4 text-center">
                  
                 {/* </td>
                 <td className="p-3"> */}
                   <span
-                    className={`px-4 py-1 rounded-full text-xs font-medium ${statusColors[trader.verified]}`}
+                    className={`px-4 py-1 rounded-full text-center text-xs font-medium ${statusColors[trader.verified]}`}
                   >
                     {trader.verified}
                   </span>
                 </td>
                 <td className="p-4  flex gap-3 text-center space-x-1">
                    <button
-                    onClick={() => setSelectedTrader(trader)}
-                    className="text-blue-600 hover:underline"
+                    onClick={() => navigate(`/trader-request-view/${trader.id}`)}
+                    className="text-blue-600 text-center hover:underline decoration-none"
                   >
                     View
                   </button>
-                  <button className="text-green-600 hover:text-green-800 text-sm">Approve</button>
-                  <button className="text-red-600 hover:text-red-800 text-sm">Decline</button>
+                  {/* <button className="text-green-600 hover:text-green-800 text-sm">Approve</button>
+                  <button className="text-red-600 hover:text-red-800 text-sm">Decline</button> */}
                 </td>
               </tr>
             ))}

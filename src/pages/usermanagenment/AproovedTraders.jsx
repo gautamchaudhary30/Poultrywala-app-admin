@@ -238,6 +238,7 @@ const ApprovedTraders = () => {
       <option value="Ludhiana">Ludhiana</option>
       <option value="Patna">Patna</option>
       <option value="Faridabad">Faridabad</option>
+
       
     </select>
 
@@ -266,47 +267,47 @@ const ApprovedTraders = () => {
       <table className="min-w-[1089px] text-sm border border-gray-200 rounded">
         <thead className="bg-gray-100 text-left">
           <tr>
-            <th className="p-4">Business Info</th>
-            <th className="p-4">Contact</th>
-            <th className="p-4">Location</th>
-            <th className="p-4">Documents</th>
-            <th className="p-4">Bank Details</th>
-            <th className="p-4">Status</th>
+            <th className="p-4 text-center">Business Info</th>
+            <th className="p-4 text-center">Contact</th>
+            <th className="p-4 text-center">Location</th>
+            <th className="p-4 text-center">Documents</th>
+            <th className="p-4 text-center">Bank Details</th>
+            <th className="p-4 text-center">Status</th>
             <th className="p-4 text-center">Actions</th>
           </tr>
         </thead>
         <tbody>
           {filteredData.slice(page*10-10,page*10).map((trader, index) => (
             <tr key={index} className="border-t dark:text-gray-300 dark:bg-slate-900">
-              <td className="p-4">
+              <td className="p-4 text-center">
                 <div className="font-medium">{trader.business}</div>
                 <div className="text-gray-500">{trader.name}</div>
               </td>
-              <td className="p-4">
+              <td className="p-4 text-center">
                 <div>{trader.phone}</div>
                 <div className="text-gray-500">{trader.email}</div>
               </td>
-              <td className="p-4">
+              <td className="p-4 text-center">
                 <div className="font-medium">{trader.location}</div>
                 <div className="text-gray-500">{trader.district}</div>
               </td>
-              <td className="p-4">
+              <td className="p-4 text-center">
                 <div>GST: {trader.gst}</div>
                 <div>PAN: {trader.pan}</div>
               </td>
-              <td className="p-4">
+              <td className="p-4 text-center">
                 <div>{trader.bankHolder}</div>
                 <div className="text-gray-500">{trader.ifsc}</div>
               </td>
-              <td className="p-4">
+              <td className="p-4 text-center">
                 <div className={`px-2 py-1 rounded text-xs font-medium ${statusColors[trader.status]}`}>
                   {trader.status}
                 </div>
               </td>
-              <td className="p-4 text-center space-x-2">
+              <td className="p-4 text-center">
                 <button 
                 onClick={() => navigate(`/trader-registration/${index}`)} 
-                className="text-green-600 active:scale-95">view👁️</button>
+                className="text-green-600 active:scale-95">view</button>
               
               </td>
             </tr>
